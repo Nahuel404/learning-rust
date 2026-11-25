@@ -1,0 +1,9 @@
+{
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.linkedProjects": ["Cargo.toml", "rustlings/Cargo.toml"]
+}
+

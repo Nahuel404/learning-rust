@@ -1,0 +1,6 @@
+# Cada `cargo new fase-N/nombre` se agrega solo a members.
+# rustlings queda afuera: es un proyecto aparte con ejercicios que a proposito no compilan.
+[workspace]
+resolver = "3"
+members = []
+exclude = ["rustlings"]

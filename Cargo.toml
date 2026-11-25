@@ -2,5 +2,5 @@
 # rustlings queda afuera: es un proyecto aparte con ejercicios que a proposito no compilan.
 [workspace]
 resolver = "3"
-members = []
+members = ["fase-0/hola"]
 exclude = ["rustlings"]

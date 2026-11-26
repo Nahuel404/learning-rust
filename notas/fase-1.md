@@ -14,3 +14,17 @@ Da un error de compilación. Rust no te deja usar una variable nula/vacía o que
 Por ahora todo claro
 
 **Próximo paso:** cap. 3.2, tipos de datos.
+
+## 1.1 Tipos de datos (26/11/2026)
+
+**¿Qué pasa con un overflow de enteros en debug y qué pasa en release? ¿Por qué Rust los trata distinto?**
+Un overflow de enteros es cuando un valor de un entero supera el límite que soporta la variable. En release lo que pasa es que rust realiza una envoltura, si el valor maximo es 255 y la variable recive 256 el valor que guarda es 0. Rust tiene métodos en la librería estandar, solo se mencionan por encima sin dar mucha profundidad. wrapping_*, checked_*, overflowing_*, saturating_* para manejar los overflow de enteros. En debug hace verificaciones de overflow ya que estando en debug el coste de la verificación es menos importante que que te diga si hay un error de overflow, te avisa con un panic.
+**¿Por qué `'a'` y `"a"` son tipos diferentes?**
+Lo que entendi es que las comillas simples son para un caracter, un char, que es una variable de 4 bytes que representa un valor escalar unicode. Y las comillas dobles son cadenas de caracteres, el cual no es unicode, no se profundiza mucho tampoco en este capitulo. Corrección luego de revición: la cadena de caracter si es unicode, solo que se trata de una variable con la cantidad de caracteres que se quiera cada uno de 1 a 4 bytes
+**¿En qué se diferencia una tupla de un array? Pensá un caso donde usarías cada uno.**
+se diferencian principalmente en que el array tiene todos los valores del mismo tipo, la tupla no; y la forma en que se acceden, la tupla es "x.1" y array "x[1]". Como caso de uso de una tupla, guardar un conjunto de valores de un perfil, por ejemplo, mail, contraseña, nombre, edad, fecha de nacimiento. Y para un array, guardar los meses del año.
+**Si no anotás el tipo, ¿cuál elige Rust para `let x = 3;` y cuál para `let y = 3.0;`?**
+para x rust elije i32 y para y rust elije f64
+**Dudas:**
+Imagino que las dudas que tengo las dejé en las preguntas respondidas, pero también imagino que mas adelante se aclaran
+**Próximo paso:** cap. 3.3 (funciones) y Rustlings `functions1`–`5`.
